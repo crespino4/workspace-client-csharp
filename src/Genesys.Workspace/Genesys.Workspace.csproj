@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Workspace API
+
+Agent API
+
+OpenAPI spec version: 1.0.0
+
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A37DD118-9D07-46EB-B6D9-DC614A0CDAAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Genesys.Workspace</RootNamespace>
+    <AssemblyName>Genesys.Workspace</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CometD.NET">
+      <HintPath>..\..\..\..\..\CometD.NET-master\CometD.NET\bin\Debug\CometD.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\console-agent-app-csharp\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="WorkspaceApi.cs" />
+    <Compile Include="ClientTransport.cs" />
+    <Compile Include="Notifications.cs" />
+    <Compile Include="WorkspaceApiException.cs" />
+    <Compile Include="Api\DocumentationApi.cs" />
+    <Compile Include="Api\NotificationsApi.cs" />
+    <Compile Include="Api\ReportingApi.cs" />
+    <Compile Include="Api\SessionApi.cs" />
+    <Compile Include="Api\TargetsApi.cs" />
+    <Compile Include="Api\UcsApi.cs" />
+    <Compile Include="Api\VoiceApi.cs" />
+    <Compile Include="Client\ApiClient.cs" />
+    <Compile Include="Client\ApiException.cs" />
+    <Compile Include="Client\ApiResponse.cs" />
+    <Compile Include="Client\Configuration.cs" />
+    <Compile Include="Client\ExceptionFactory.cs" />
+    <Compile Include="Client\IApiAccessor.cs" />
+    <Compile Include="Client\SwaggerDateConverter.cs" />
+    <Compile Include="Model\ActivatechannelsData.cs" />
+    <Compile Include="Model\AgentHistoryData.cs" />
+    <Compile Include="Model\AlternateData.cs" />
+    <Compile Include="Model\AnswerData.cs" />
+    <Compile Include="Model\ApiErrorResponse.cs" />
+    <Compile Include="Model\ApiSuccessResponse.cs" />
+    <Compile Include="Model\AssignInteractionToContactData.cs" />
+    <Compile Include="Model\Call.cs" />
+    <Compile Include="Model\CallCompletedData.cs" />
+    <Compile Include="Model\CallNoteData.cs" />
+    <Compile Include="Model\CallParticipants.cs" />
+    <Compile Include="Model\ChannelsData.cs" />
+    <Compile Include="Model\ClearData.cs" />
+    <Compile Include="Model\CompleteConferenceData.cs" />
+    <Compile Include="Model\CompleteTransferData.cs" />
+    <Compile Include="Model\ConfigResponse.cs" />
+    <Compile Include="Model\ConfigResponseData.cs" />
+    <Compile Include="Model\ConfigResponseDataActionCodes.cs" />
+    <Compile Include="Model\ConfigResponseDataBusinessAttributes.cs" />
+    <Compile Include="Model\ConfigResponseDataTransactions.cs" />
+    <Compile Include="Model\ConfigResponseDataValues.cs" />
+    <Compile Include="Model\ContactDetailsData.cs" />
+    <Compile Include="Model\ContactHistoryData.cs" />
+    <Compile Include="Model\CurrentSession.cs" />
+    <Compile Include="Model\CurrentSessionData.cs" />
+    <Compile Include="Model\CurrentSessionDataPendingloginasync.cs" />
+    <Compile Include="Model\CurrentSessionDataUser.cs" />
+    <Compile Include="Model\CurrentSessionDataUserActiveSession.cs" />
+    <Compile Include="Model\CurrentSessionStatus.cs" />
+    <Compile Include="Model\DeleteContactData.cs" />
+    <Compile Include="Model\DeleteFromConferenceData.cs" />
+    <Compile Include="Model\Devices.cs" />
+    <Compile Include="Model\DevicesData.cs" />
+    <Compile Include="Model\Dn.cs" />
+    <Compile Include="Model\ForwardData.cs" />
+    <Compile Include="Model\GetContactsData.cs" />
+    <Compile Include="Model\HoldData.cs" />
+    <Compile Include="Model\IdentifyContactData.cs" />
+    <Compile Include="Model\InitiateConferenceData.cs" />
+    <Compile Include="Model\InitiateTransferData.cs" />
+    <Compile Include="Model\InlineResponse200.cs" />
+    <Compile Include="Model\InlineResponse200Data.cs" />
+    <Compile Include="Model\InlineResponse200Status.cs" />
+    <Compile Include="Model\InteractionContentData.cs" />
+    <Compile Include="Model\KeyData.cs" />
+    <Compile Include="Model\Kvpair.cs" />
+    <Compile Include="Model\LuceneSearchData.cs" />
+    <Compile Include="Model\LuceneSearchInteractionData.cs" />
+    <Compile Include="Model\MakeCallData.cs" />
+    <Compile Include="Model\MergeData.cs" />
+    <Compile Include="Model\MonitoringScopeData.cs" />
+    <Compile Include="Model\MonitoringScopeDataData.cs" />
+    <Compile Include="Model\NotReadyData.cs" />
+    <Compile Include="Model\PersonalFavoriteData.cs" />
+    <Compile Include="Model\PhoneCallData.cs" />
+    <Compile Include="Model\ReadyData.cs" />
+    <Compile Include="Model\RecentData.cs" />
+    <Compile Include="Model\RecentTargetData.cs" />
+    <Compile Include="Model\ReconnectData.cs" />
+    <Compile Include="Model\RedirectData.cs" />
+    <Compile Include="Model\ReleaseData.cs" />
+    <Compile Include="Model\ReportingunsubscribeData.cs" />
+    <Compile Include="Model\RetrieveData.cs" />
+    <Compile Include="Model\SendDTMFData.cs" />
+    <Compile Include="Model\SendUserEventData.cs" />
+    <Compile Include="Model\SendUserEventDataData.cs" />
+    <Compile Include="Model\SingleStepConferenceData.cs" />
+    <Compile Include="Model\SingleStepTransferData.cs" />
+    <Compile Include="Model\StartMonitoringData.cs" />
+    <Compile Include="Model\StatisticsRegisterData.cs" />
+    <Compile Include="Model\StatisticsRegisterDataData.cs" />
+    <Compile Include="Model\StatisticsSubscribeData.cs" />
+    <Compile Include="Model\StatisticsSubscribeDataData.cs" />
+    <Compile Include="Model\StopMonitoringData.cs" />
+    <Compile Include="Model\Target.cs" />
+    <Compile Include="Model\TargetInformation.cs" />
+    <Compile Include="Model\TargetsResponse.cs" />
+    <Compile Include="Model\TargetsResponseData.cs" />
+    <Compile Include="Model\TargetspersonalfavoritessaveData.cs" />
+    <Compile Include="Model\TargetsrecentsaddData.cs" />
+    <Compile Include="Model\UcsassigninteractiontocontactData.cs" />
+    <Compile Include="Model\UcsdeletecontactData.cs" />
+    <Compile Include="Model\UcsfindorcreatephonecallData.cs" />
+    <Compile Include="Model\UcsgetagenthistoryData.cs" />
+    <Compile Include="Model\UcsgetcontactdetailsData.cs" />
+    <Compile Include="Model\UcsgetcontacthistoryData.cs" />
+    <Compile Include="Model\UcsgetcontactsData.cs" />
+    <Compile Include="Model\UcsgetinteractioncontentData.cs" />
+    <Compile Include="Model\UcsidentifycontactData.cs" />
+    <Compile Include="Model\UcslucenesearchData.cs" />
+    <Compile Include="Model\UcslucenesearchinteractionData.cs" />
+    <Compile Include="Model\UcssetcallcompletedData.cs" />
+    <Compile Include="Model\UcssetcallnoteData.cs" />
+    <Compile Include="Model\UcsupdatecontactData.cs" />
+    <Compile Include="Model\UnsubscribeData.cs" />
+    <Compile Include="Model\UpdateContactData.cs" />
+    <Compile Include="Model\UserData.cs" />
+    <Compile Include="Model\UserData1.cs" />
+    <Compile Include="Model\VoicecallsidalternateData.cs" />
+    <Compile Include="Model\VoicecallsidcompleteData.cs" />
+    <Compile Include="Model\VoicecallsidcompletetransferData.cs" />
+    <Compile Include="Model\VoicecallsiddeletefromconferenceData.cs" />
+    <Compile Include="Model\VoicecallsiddeleteuserdatapairData.cs" />
+    <Compile Include="Model\VoicecallsidinitiateconferenceData.cs" />
+    <Compile Include="Model\VoicecallsidinitiatetransferData.cs" />
+    <Compile Include="Model\VoicecallsidmergeData.cs" />
+    <Compile Include="Model\VoicecallsidreconnectData.cs" />
+    <Compile Include="Model\VoicecallsidredirectData.cs" />
+    <Compile Include="Model\VoicecallsidsenddtmfData.cs" />
+    <Compile Include="Model\VoicecallsidsinglestepconferenceData.cs" />
+    <Compile Include="Model\VoicecallsidsinglesteptransferData.cs" />
+    <Compile Include="Model\VoicemakecallData.cs" />
+    <Compile Include="Model\VoicenotreadyData.cs" />
+    <Compile Include="Model\VoicereadyData.cs" />
+    <Compile Include="Model\VoicesetforwardData.cs" />
+    <Compile Include="Model\VoicestartmonitoringData.cs" />
+    <Compile Include="Model\VoicestopmonitoringData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VoiceApi.cs" />
+    <Compile Include="TargetsApi.cs" />
+    <Compile Include="SessionApi.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="KeyValueCollection.cs" />
+    <Compile Include="KeyValuePair.cs" />
+    <Compile Include="Models.cs" />
+    <Compile Include="Api\GroupsApi.cs" />
+    <Compile Include="Api\MediaApi.cs" />
+    <Compile Include="Api\UsersApi.cs" />
+    <Compile Include="Model\AcceptData.cs" />
+    <Compile Include="Model\AcceptData1.cs" />
+    <Compile Include="Model\GetCategoryData.cs" />
+    <Compile Include="Model\GetStandardResponseData.cs" />
+    <Compile Include="Model\InlineResponse2001.cs" />
+    <Compile Include="Model\InlineResponse2001Data.cs" />
+    <Compile Include="Model\InlineResponse2002.cs" />
+    <Compile Include="Model\InlineResponse2002Data.cs" />
+    <Compile Include="Model\InlineResponse2002DataStatistics.cs" />
+    <Compile Include="Model\IxnReasonCode.cs" />
+    <Compile Include="Model\LogoutMediaData.cs" />
+    <Compile Include="Model\Media.cs" />
+    <Compile Include="Model\MediamediatypeinteractionsidacceptData.cs" />
+    <Compile Include="Model\MediamediatypeinteractionsiddeleteuserdataData.cs" />
+    <Compile Include="Model\MediamediatypeinteractionsidplaceinqueueData.cs" />
+    <Compile Include="Model\MediamediatypelogoutData.cs" />
+    <Compile Include="Model\MediamediatypenotreadyData.cs" />
+    <Compile Include="Model\NotReadyForMediaData.cs" />
+    <Compile Include="Model\OpenMediaChannel.cs" />
+    <Compile Include="Model\PlaceInQueueData.cs" />
+    <Compile Include="Model\ReadyForMediaData.cs" />
+    <Compile Include="Model\StatisticValue.cs" />
+    <Compile Include="Model\StatisticValueForPeekResponse.cs" />
+    <Compile Include="Model\StatisticValueForRegister.cs" />
+    <Compile Include="Model\StatisticValueForRegisterResponse.cs" />
+    <Compile Include="Model\UcsresponsescategoriesidgetdetailsData.cs" />
+    <Compile Include="Model\UcsresponsesidgetdetailsData.cs" />
+    <Compile Include="Model\UserData2.cs" />
+    <Compile Include="TargetsModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+      <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
+
